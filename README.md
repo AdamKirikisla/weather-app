@@ -1,7 +1,7 @@
 # 🌦️ Weather App
 Search for any city and get its current weather, built with vanilla HTML, CSS, and JavaScript using the OpenWeatherMap API.
 
-🔗 [Live Demo](https://weather-feeoendba-adam-kirikisla.vercel.app/)
+🔗 [Live Demo][(https://weather-feeoendba-adam-kirikisla.vercel.app/)](https://weather-app-five-ivory-52.vercel.app/)
 
 ## Features
 * Live weather search by city name
