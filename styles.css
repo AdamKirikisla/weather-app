@@ -8,7 +8,13 @@ body{
     align-items: center;
     justify-content: center;
 }
-
+.appTitle{
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    margin: 1rem 0 0;
+}
 .weatherForm{
     margin: 2rem;
     display: flex;
@@ -109,6 +115,11 @@ p{
 
 
 @media (max-width: 600px) {
+
+
+    .appTitle{
+    font-size: 2rem;
+}
   .weatherForm{
     margin: 1.5rem;
     display: flex;
