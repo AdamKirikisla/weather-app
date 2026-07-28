@@ -1,70 +1,91 @@
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: antiquewhite;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #74809a 0%, #97c7cc 100%);
+    min-height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .weatherForm{
     margin: 2rem;
-}
-.cityInput{
-    padding: 1rem;
-    font-size: bold;
-    border: 2px solid black;
-    border-radius: 20px;
-    margin: 1rem;
-    width: 300px;
+    display: flex;
+    gap: 0.5rem;
 }
 
+.cityInput{
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 20px;
+    width: 300px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cityInput:focus{
+    box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.4);
+}
 
 button[type="submit"]{
     cursor: pointer;
     font-weight: bold;
-    font-size: 2rem;
-    background-color: green;
+    font-size: 1.2rem;
+    background-color: #14803c;
     color: white;
     border: none;
     border-radius: 10px;
-    padding: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 button[type="submit"]:hover{
-        background-color: rgba(0, 128, 0, 0.327);
-
+    background-color: #0f6b30;
+    transform: translateY(-1px);
 }
 
 .card{
-    background: linear-gradient(180deg, rgba(128, 0, 128, 0.721), rgba(255, 192, 203, 0.556));
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     padding: 3rem;
-    box-shadow: 2px 2px 5px black;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     min-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 40px;
 }
 
 .cityDisplay{
-    margin-top: 0;
-    margin-bottom: 25px;
+    margin: 0 0 25px;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 p{
     font-size: 1.5rem;
+    margin: 0;
 }
 
-.cityDisplay, .tempDisplay{
+.tempDisplay{
     font-size: 3.5rem;
-     font-weight: bold;
-     color: rgba(0, 0, 0, 0.742);
-     margin-bottom: 25px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 .humidityDisplay{
     font-weight: bold;
     margin-bottom: 25px;
+    color: white;
 }
 
 .descDisplay{
@@ -72,10 +93,15 @@ p{
     font-weight: bold;
     font-style: italic;
     font-size: 25px;
+    color: rgb(230, 230, 230);
+    text-transform: capitalize;
 }
 
 .errorDisplay{
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: hsla(0, 0%, 0%, 0.75);
+    color: #fff;
+    background: rgba(200, 40, 40, 0.6);
+    padding: 1rem 2rem;
+    border-radius: 20px;
 }
