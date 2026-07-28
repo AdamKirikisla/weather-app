@@ -34,14 +34,49 @@ weatherForm.addEventListener('submit',async event => {
 async function getWeatherData(city) {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
     const response = await axios.get(apiUrl);
-    console.log(response);
+    return response.data;
+    // .data is a property on the Axios response object.
+    //response.data is the actual JSON returned by Axios from the API
+    // used for displayWeatherInfo()
 }
 
     
 // Display Weather function
-function displayWeatherInfo(data) {
+function displayWeatherInfo(cityData) {
 
-    console.log(data);
+    // Resets card
+    card.textContent = "";
+    card.style.display = "flex";
+
+    // Object destructuring to access data var
+    const {name: city,
+         main: {temp, humidity},
+        weather: [{description}]} = cityData;
+
+
+    const cityDisplay = document.createElement('h1');
+    const tempDisplay = document.createElement('p');
+    const humidityDisplay = document.createElement('p');
+    const descDisplay = document.createElement('p');
+
+    cityDisplay.textContent = city;
+    tempDisplay.textContent = `${(temp - 273.15).toFixed(1)}°C`;
+    humidityDisplay.textContent = `Humidity: ${humidity}%`;
+    descDisplay.textContent = description;
+
+    cityDisplay.classList.add("cityDisplay");
+    tempDisplay.classList.add("tempDisplay");
+    humidityDisplay.classList.add("humidityDisplay");
+    descDisplay.classList.add("descDisplay");
+
+
+
+    card.appendChild(cityDisplay);
+    card.appendChild(tempDisplay);
+    card.appendChild(humidityDisplay);
+    card.appendChild(descDisplay);
+
+
 }
 
 // Display Error message
