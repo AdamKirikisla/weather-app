@@ -32,12 +32,16 @@ weatherForm.addEventListener('submit',async event => {
 
 // Axios Logic
 async function getWeatherData(city) {
-    
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    const response = await axios.get(apiUrl);
+    console.log(response);
 }
 
+    
 // Display Weather function
 function displayWeatherInfo(data) {
 
+    console.log(data);
 }
 
 // Display Error message
@@ -46,6 +50,7 @@ function displayError(message) {
     errorDisplay.textContent = message
     errorDisplay.classList.add('errorDisplay');
 
+    // Resets card
     card.textContent = "";
     card.style.display = "flex";
 
